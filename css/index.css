@@ -1,117 +1,162 @@
 html, body {
-    height: 100%; /* Ensure the html and body take up the full height of the viewport */
+    /*height: 100%; /* Ensure the html and body take up the full height of the viewport */
     width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* Include borders and padding in the element's dimensions */
 }
 
-*, *::before, *::after {
-    box-sizing: inherit; /* Apply box-sizing to all elements */
+
+header{
+	background-color: black;
+	border-bottom: 2px pink solid;
+	width: 100%;
 }
+
 
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    background-color: #000; /* Fallback-färg om bilderna inte laddas */
+		align-items: center;
+		background-color: pink;
     font-family: Arial, sans-serif;
-    border: 30px pink solid;
-    position: relative; /* Gör att andra element kan placeras ovanpå */
-    overflow: hidden; /* Dölj eventuellt överskott */
 }
 
-main {
-    flex: 1; /* Allow the main content to grow and take up available space */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 h1 {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 3rem;
-    color: pink;
-    text-align: center;
-    text-shadow: 8px 8px 10px rgba(30, 255, 0, 0.5); /* Lägg till skuggning */
-    border-bottom: 2px pink solid;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 3rem;
+	color: pink;
+	text-align: center;
+
+	 /* Lägger till  grön skuggning */
+	text-shadow: 8px 8px 10px rgba(30, 255, 0, 0.5);
 }
 
-video {
-    width: 100%;
-    height: auto;
-    max-width: 800px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-iframe {
-    border: 4px pink solid;;
-}
 
 h1+p {
-    font-size: 1.5rem;
-    color: pink;
-    text-align: center;
+	font-size: 1.5rem;
+	color: pink;
+	text-align: center;
 }
+
 
 h2 {
-    font-size: 0.75rem;
-    color: pink;
-}
-
-footer {
-    display: flex;
-    justify-content: center; /* Center the sections horizontally */
-    align-items: center; /* Center the content vertically */
-    gap: 2rem; /* Add spacing between sections */
-    border: 3px rgb(121, 19, 19) solid;
-    width: 100%; /* Make the footer span the full width */
-    background-color: #000; /* Add a background color */
-}
-
-footer section {
-    width: auto;
-    text-align: center; /* Centrera texten och bilderna i varje sektion */
-    border: 1px pink solid;
-}
-
-footer section h2 {
-    height: 2rem;
+	font-size: 1.5rem;
+	color: pink;
 }
 
 
-/* Backgrundsbilder */
+/* Special h2 för den måste ha svart färg för att synas */
+#black_h2{
+	color: black;
+	text-align: center;
+	font-size: 2.5rem;
 
-
-
-img {
-    max-width: 100%;
-    height: auto; 
+	/* Lite avstånd så det blir snyggare */
+	margin-top: 5rem;
+	margin-bottom: -3rem;
 }
 
-.background-grid {
-    position: absolute; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr); 
-    gap: 0; 
-    z-index: -1;
+
+h3{
+	text-align: center;
+	font-size: 1rem;
 }
 
-.background-grid .grid-item {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    /*border: 4px green solid;*/
+
+.video iframe{
+	/* Sätta den så den sitter fast på samma ställe */
+	position:absolute;
+	top: 100%; /* 35% om man vill ha högre upp. 100% funkade på min skärm. Annars kanske 50% funkar*/
+	left: 50%;
+	transform: translateX(-50%);
+
+	/* Lägger skugga så den sticker ut visuellt */
+  box-shadow: 0 12px 30px rgba(0, 0, 0);
+
+	/* Rundar hörnen å lägger ram */
+	border-radius: 5%;
+	border: 1.5px blue solid;
+
+	/* Om man vill ha videon större kan man ändra dessa parametrar. */
+	/*width: 50%;
+	height: 50%;*/
 }
 
-.background-grid .grid-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
+
+/* Gör en grid med 4 columner och 2 rader. */
+.background-grid{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+
+	/* Lägger lite skugga så att sketionen med bilderna sticker ut lite */
+	box-shadow: 0 12px 30px rgba(0, 0, 0);
 }
+
+
+/* Gör så att bilderna läggs brevid varandra och är lika stora. */
+.grid-item img {
+
+	/* Säger att bilden ska ta upp 100% av rutans höjd och bredd. Object-fit och display block gör så att bilderna inte blir ihoptryckta verkar det som.*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+	border-radius: 0px;
+}
+
+
+/* Kursmatris med attributes */
+.attributes{
+	/* Pappersliknande färg */
+	background-color: papayawhip;
+
+	/* Gär så att alla attributes läggs rad på rad. */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	/* Gör så att bilderna U och VG läggs i mitten */
+	text-align: center;
+	padding-top: 4rem;
+}
+
+
+/* Gör så att det blir linjer mellan raderna i kursmatrisen. */
+.attributes section{
+	border: 1px black solid;
+}
+
+
+/* Rundar kanterna på VG och U samt lägger till en ram så det blir snyggare. */
+.attributes img{
+	border-radius: 5px;
+	border: 2px black solid;
+}
+
+
+/* Bakgrundsfärg rött för U */
+.U{
+	width: 90%;
+	background-color: red;
+}
+
+
+/* Bakgrundsfärg grönt för VG */
+.VG{
+	width: 90%;
+	background-color: green;
+}
+
+
+/* Att göra
+
+* Kanske en footer.
+* Ändra kursmatrisens attribut.
+* Lägga in variation av bilder.
+* Kanske lägga till mer bilder. 
+* Lägga in videon.
+* Lägga till på server.
+*/
