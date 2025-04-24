@@ -1,0 +1,117 @@
+html, body {
+    height: 100%; /* Ensure the html and body take up the full height of the viewport */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include borders and padding in the element's dimensions */
+}
+
+*, *::before, *::after {
+    box-sizing: inherit; /* Apply box-sizing to all elements */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #000; /* Fallback-färg om bilderna inte laddas */
+    font-family: Arial, sans-serif;
+    border: 30px pink solid;
+    position: relative; /* Gör att andra element kan placeras ovanpå */
+    overflow: hidden; /* Dölj eventuellt överskott */
+}
+
+main {
+    flex: 1; /* Allow the main content to grow and take up available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    color: pink;
+    text-align: center;
+    text-shadow: 8px 8px 10px rgba(30, 255, 0, 0.5); /* Lägg till skuggning */
+    border-bottom: 2px pink solid;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+iframe {
+    border: 4px pink solid;;
+}
+
+h1+p {
+    font-size: 1.5rem;
+    color: pink;
+    text-align: center;
+}
+
+h2 {
+    font-size: 0.75rem;
+    color: pink;
+}
+
+footer {
+    display: flex;
+    justify-content: center; /* Center the sections horizontally */
+    align-items: center; /* Center the content vertically */
+    gap: 2rem; /* Add spacing between sections */
+    border: 3px rgb(121, 19, 19) solid;
+    width: 100%; /* Make the footer span the full width */
+    background-color: #000; /* Add a background color */
+}
+
+footer section {
+    width: auto;
+    text-align: center; /* Centrera texten och bilderna i varje sektion */
+    border: 1px pink solid;
+}
+
+footer section h2 {
+    height: 2rem;
+}
+
+
+/* Backgrundsbilder */
+
+
+
+img {
+    max-width: 100%;
+    height: auto; 
+}
+
+.background-grid {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr); 
+    gap: 0; 
+    z-index: -1;
+}
+
+.background-grid .grid-item {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /*border: 4px green solid;*/
+}
+
+.background-grid .grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}

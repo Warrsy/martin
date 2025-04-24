@@ -1,0 +1,89 @@
+html, body {
+    height: 100%; /* Ensure the html and body take up the full height of the viewport */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header{
+    width: 100%;
+    border: 4px purple solid
+}
+
+main {
+    border: 4px gold solid;
+}
+
+.images{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px;
+    border: 3px green solid;
+}
+
+.images picture{
+    border: blue 3px solid;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    color: pink;
+    text-align: center;
+    text-shadow: 8px 8px 10px rgba(30, 255, 0, 0.5); /* Lägg till skuggning */
+    border-bottom: 2px pink solid;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+iframe {
+    border: 4px pink solid;;
+}
+
+h1+p {
+    font-size: 1.5rem;
+    color: pink;
+    text-align: center;
+}
+
+h2 {
+    font-size: 0.75rem;
+    color: pink;
+}
+
+footer {
+    display: flex;
+    justify-content: center; /* Center the sections horizontally */
+    align-items: center; /* Center the content vertically */
+    gap: 2rem; /* Add spacing between sections */
+    border: 3px rgb(121, 19, 19) solid;
+    width: 100%; /* Make the footer span the full width */
+    background-color: #000; /* Add a background color */
+}
+
+footer section {
+    width: auto;
+    text-align: center; /* Centrera texten och bilderna i varje sektion */
+    border: 1px pink solid;
+}
+
+footer section h2 {
+    height: 2rem;
+}
