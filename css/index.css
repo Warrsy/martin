@@ -1,13 +1,15 @@
-html, body {
-    /*height: 100%; /* Ensure the html and body take up the full height of the viewport */
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Include borders and padding in the element's dimensions */
+html,
+body {
+	/*height: 100%; /* Ensure the html and body take up the full height of the viewport */
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* Include borders and padding in the element's dimensions */
 }
 
 
-header{
+header {
 	background-color: black;
 	border-bottom: 2px pink solid;
 	width: 100%;
@@ -15,11 +17,11 @@ header{
 
 
 body {
-    display: flex;
-    flex-direction: column;
-		align-items: center;
-		background-color: pink;
-    font-family: Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: pink;
+	font-family: Arial, sans-serif;
 }
 
 
@@ -29,7 +31,7 @@ h1 {
 	color: pink;
 	text-align: center;
 
-	 /* Lägger till  grön skuggning */
+	/* Lägger till  grön skuggning */
 	text-shadow: 8px 8px 10px rgba(30, 255, 0, 0.5);
 }
 
@@ -48,7 +50,7 @@ h2 {
 
 
 /* Special h2 för den måste ha svart färg för att synas */
-#black_h2{
+#black_h2 {
 	color: black;
 	text-align: center;
 	font-size: 2.5rem;
@@ -59,21 +61,22 @@ h2 {
 }
 
 
-h3{
+h3 {
 	text-align: center;
 	font-size: 1rem;
 }
 
 
-.video iframe{
+.video iframe {
 	/* Sätta den så den sitter fast på samma ställe */
-	position:absolute;
-	top: 100%; /* 35% om man vill ha högre upp. 100% funkade på min skärm. Annars kanske 50% funkar*/
+	position: absolute;
+	top: 50%;
+	/* 35% om man vill ha högre upp. 100% funkade på min skärm. Annars kanske 50% funkar. 68% passade 1980 width*/
 	left: 50%;
 	transform: translateX(-50%);
 
 	/* Lägger skugga så den sticker ut visuellt */
-  box-shadow: 0 12px 30px rgba(0, 0, 0);
+	box-shadow: 0 12px 30px rgba(0, 0, 0);
 
 	/* Rundar hörnen å lägger ram */
 	border-radius: 5%;
@@ -86,7 +89,7 @@ h3{
 
 
 /* Gör en grid med 4 columner och 2 rader. */
-.background-grid{
+.background-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
@@ -96,20 +99,28 @@ h3{
 }
 
 
+
+
 /* Gör så att bilderna läggs brevid varandra och är lika stora. */
 .grid-item img {
 
 	/* Säger att bilden ska ta upp 100% av rutans höjd och bredd. Object-fit och display block gör så att bilderna inte blir ihoptryckta verkar det som.*/
+	/*
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-	border-radius: 0px;
+*/
+
+	/* Funkar nice med liggande foton, alltså width 6400x4000*/
+	width: 100%;
+	/*height: auto;*/
+	object-fit: cover;
+	display: block;
 }
 
 
 /* Kursmatris med attributes */
-.attributes{
+.attributes {
 	/* Pappersliknande färg */
 	background-color: papayawhip;
 
@@ -121,42 +132,43 @@ h3{
 	/* Gör så att bilderna U och VG läggs i mitten */
 	text-align: center;
 	padding-top: 4rem;
+	padding-bottom: 2rem;
 }
 
 
 /* Gör så att det blir linjer mellan raderna i kursmatrisen. */
-.attributes section{
+.attributes section {
 	border: 1px black solid;
 }
 
 
 /* Rundar kanterna på VG och U samt lägger till en ram så det blir snyggare. */
-.attributes img{
+.attributes img {
 	border-radius: 5px;
 	border: 2px black solid;
 }
 
 
 /* Bakgrundsfärg rött för U */
-.U{
+.U {
 	width: 90%;
 	background-color: red;
 }
 
 
 /* Bakgrundsfärg grönt för VG */
-.VG{
+.VG {
 	width: 90%;
 	background-color: green;
 }
 
+/* Footer om man vill ha */
+footer {
+	display: block;
+	height: 110px;
+	width: 100%;
 
-/* Att göra
-
-* Kanske en footer.
-* Ändra kursmatrisens attribut.
-* Lägga in variation av bilder.
-* Kanske lägga till mer bilder. 
-* Lägga in videon.
-* Lägga till på server.
-*/
+	background-image: url(../images/martin_ny.jpg);
+	background-size: 100px;
+	border: 2px black solid;
+}
